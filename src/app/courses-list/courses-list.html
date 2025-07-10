@@ -1,19 +1,19 @@
 <h2>{{ title }}</h2>
-<div class="course-item">
-    <h3>{{ courses[0].title }}</h3>
-    <p>{{ courses[0].description }}</p>
-    <p>{{ courses[0].price }}</p>
-    <p>{{ courses[0].date }}</p>
-    <p [hidden]="!courses[0].soldOut">Vendido</p>
-    <button>Ver detalhes</button>
-</div>
+@for(course of courses; track course.id){
 
 <div class="course-item">
-    <h3>{{ courses[1].title }}</h3>
-    <p>{{ courses[1].description }}</p>
-    <p>{{ courses[1].price }}</p>
-    <p>{{ courses[1].date }}</p>
-    <p [hidden]="!courses[1].soldOut">Vendido</p>
-    <button>Ver detalhes</button>
+    <h3>{{ course.title }}</h3>
+    <p>{{ course.description }}</p>
+    <p>{{ course.price }}</p>
+    <p>{{ course.date }}</p>
+    <p [hidden]="!course.soldOut">Vendido</p>
+    <img [ngStyle]="{'border': course.soldOut ? '2px solid red' : 'none'}" [src]="course.img" [alt]="course.title" width="100">
+    @if(course.price < 50){
+        <div class="special-offer">Oferta especial!</div>
+    }
+    <button (click)="viewDetails(course.title)">Ver detalhes</button>
 </div>
+
+}
+
 
