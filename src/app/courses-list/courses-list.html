@@ -4,8 +4,8 @@
 <div class="course-item">
     <h3>{{ course.title }}</h3>
     <p>{{ course.description }}</p>
-    <p>{{ course.price }}</p>
-    <p>{{ course.date }}</p>
+    <p>{{ course.price | currency: 'BRL' }}</p>
+    <p>{{ course.date | date:'longDate'}}</p>
     <p [hidden]="!course.soldOut">Vendido</p>
     <img [ngStyle]="{'border': course.soldOut ? '2px solid red' : 'none'}" [src]="course.img" [alt]="course.title" width="100">
     @if(course.price < 50){
