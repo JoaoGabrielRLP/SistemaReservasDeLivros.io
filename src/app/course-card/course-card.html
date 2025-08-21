@@ -13,5 +13,5 @@
     @if(course.onSale == true){
         <div class="onSale">À VENDA</div>
     }
-    <button (click)="viewDetails(course.title)">Ver detalhes</button>
+    <button [disabled]="course.soldOut" (click)="onCourseBooked()">Reservar o livro</button>
 </div>
