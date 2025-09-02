@@ -1,6 +1,16 @@
 <h2>{{ title }}</h2>
+<h3>{{ wishlistTitle }}</h3>
+<div class="wishlist-banner">
+@for(wish of wishlist; track wishlist){   
+      <span class="wishlist-item"> {{ wish }} </span> 
+}
+
+</div>
 @for(course of courses; track course.id){
-    <app-course-card [course]="course" (courseBooked)="onCourseBooked($event)">
+    <app-course-card [course]="course" 
+    (courseBooked)="onCourseBooked($event)"
+    (addCourse)="onAddWishlist($event)"
+    >
         
     </app-course-card>
 }

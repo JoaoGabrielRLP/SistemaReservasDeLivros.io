@@ -12,4 +12,26 @@ button{
 
 button:hover{
     background-color: #0056b3;
+
+}
+
+.wishlist-banner {
+background-color: #ffeef0;
+padding: 0.5rem;
+margin-bottom: 1rem;
+border-radius: 4px;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+
+}
+
+.wishlist-item {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+
+button:hover {
+    background-color: #0056b3;
 }

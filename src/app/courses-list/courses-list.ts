@@ -14,6 +14,11 @@ export class CoursesList implements OnInit {
     {id: 2, title: 'Angular avançado', description: 'Leve suas habilidades para o próximo nível', price: 100, date: '02-01-2025', soldOut: true, img: 'angular-logo.png', onSale: true},
     {id: 3, title: 'RxJS', description: 'Fluxo de dados assincronos', price: 45, date: '02-01-2025', soldOut: true, img: 'rxjs-1.svg', onSale: true}
   ];
+
+  wishlistTitle: string = "Lista de desejos"
+
+  wishlist: Array <any> = new Array();
+  
   /*Importando o ngOnInit*/
   ngOnInit(): void {
     console.log("CoursesList inicializado")
@@ -24,4 +29,11 @@ export class CoursesList implements OnInit {
     // Potentially do more here in the future
 
   }
+
+  onAddWishlist(course: any) {
+      this.wishlist.push(course.title);
+  }
+
+
 }
+
